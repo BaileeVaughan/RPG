@@ -9,9 +9,9 @@ public class HeartHealth : MonoBehaviour
     #region Variables
     [Header("Player Stats")]
     //public maxHealth
-    public int maxHealth;
+    public static int maxHealth;
     //public curHealth
-    public float curHealth;
+    public static int curHealth;
     [Header("Heart Slots")]
     //Canvas Image heartSlots array
     public Image[] heartSlots;

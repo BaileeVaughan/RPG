@@ -1,18 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.IO;
+using System.Runtime.Serialization.Formatters;
 using UnityEngine;
 
-public class SaveToBinary : MonoBehaviour
+public class SaveToBinary
 {
-    // Start is called before the first frame update
-    void Start()
+    public static void SaveData(PlayerManager player, EXPBar exp)
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

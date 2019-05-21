@@ -17,6 +17,8 @@ public class EXPBar : MonoBehaviour
     public Slider delaySlider;
     public Image delayFill;
 
+    
+
     void Update()
     {
         xpSlider.value = Mathf.Clamp01(curXP / maxXp);

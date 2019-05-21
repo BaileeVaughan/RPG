@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour
     #region Variables
     //Movement//
     [Header("Character")]
-    public Vector3 moveDir; //we will use this to apply movement in worldspace
+    public Vector3 moveDir;
     public CharacterController charC;
     [Header("Character Speeds")]
     public float jumpSpeed = 8f;
@@ -26,6 +26,19 @@ public class PlayerManager : MonoBehaviour
     [Header("Player and Camera connection")]
     public GameObject player;
     public GameObject mainCamera;
+    #region PlayerStats
+    //Stats//
+    [Header("Player Stats")]
+    public string[] stats;
+    public int[] statData;
+    public string playerName;
+    public int level;
+    public int maxHP, curHP; 
+    public float maxExp, curExp;
+    [Header("Game Reference")]
+    public Slider expBar;
+    public Vector3 savePos;
+    #endregion
     #endregion
 
     #region Start  
@@ -41,6 +54,8 @@ public class PlayerManager : MonoBehaviour
         //Interact//
         player = GameObject.FindGameObjectWithTag("Player");
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        //Stats//
+        HeartHealth.maxHealth = maxHP;
     }
     #endregion
 
@@ -97,7 +112,9 @@ public class PlayerManager : MonoBehaviour
                 }
                 #endregion
             }
-        }        
+        }
+        //Stats//
+        expBar.value = Mathf.Clamp01(curExp / maxExp);
     }
     #endregion
 }
