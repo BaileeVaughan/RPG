@@ -6,9 +6,6 @@ using UnityEngine.UI;
 [AddComponentMenu("Intro RPG/Player/EXPBar")]
 public class EXPBar : MonoBehaviour
 {
-    [Header("XP Reference")]
-    public float maxXp;
-    public float curXP, delayXp;
     [Header("Delay Speed")]
     public float speed = 5f;
     [Header("UI Reference")]
@@ -17,7 +14,14 @@ public class EXPBar : MonoBehaviour
     public Slider delaySlider;
     public Image delayFill;
 
-    
+    private float maxXp, curXP, delayXp;
+
+    void Start()
+    {
+        maxXp = PlayerManager.maxXp;
+        curXP = PlayerManager.curXP;
+        delayXp = PlayerManager.delayXp;
+    }
 
     void Update()
     {

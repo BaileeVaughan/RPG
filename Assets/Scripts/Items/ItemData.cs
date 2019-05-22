@@ -127,7 +127,7 @@ public static class ItemData
                 name = "Liquid Demon";
                 value = 45;
                 description = "A rare drop, caused by killing a demon in perfect conditions";
-                icon = "Crafting/Liquid_Demon_Item";
+                icon = "Crafting/Liquid_Demon_Icon";
                 mesh = "Crafting/Liquid_Demon_Mesh";
                 type = ItemType.Crafting;
                 amount = 1;
@@ -169,15 +169,93 @@ public static class ItemData
                 mesh = "Quest/War_Badge_Mesh";
                 type = ItemType.Quest;
                 break;
-                #endregion
-                #region Ingredients 500-599
-
-                #endregion
-                #region Potions 600-699
-
-                #endregion
-                #region Scrolls 700-799
-
+            #endregion
+            #region Ingredients 500-599
+            case 500:
+                name = "Blood Tear";
+                value = 5;
+                description = "Grown from the tears of dying demons";
+                icon = "Ingredients/Blood_Tear_Icon";
+                mesh = "Ingredients/Blood_Tear_Mesh";
+                type = ItemType.Ingredients;
+                amount = 2;
+                break;
+            case 501:
+                name = "Leaking Hell";
+                value = 15;
+                description = "Said to be the only thing capable of crossing from Hell to Earth";
+                icon = "Ingredients/Leaking_Hell_Icon";
+                mesh = "Ingredients/Leaking_Hell_Stone_Mesh";
+                type = ItemType.Ingredients;
+                amount = 1;
+                break;
+            case 502:
+                name = "Ogre Fungus";
+                value = 10;
+                description = "Only capable of growing between the warm toes of Ogres";
+                icon = "Ingredients/Ogre_Fungus_Icon";
+                mesh = "Ingredients/Ogre_Fungus_Mesh";
+                type = ItemType.Ingredients;
+                amount = 3;
+                break;
+            #endregion
+            #region Potions 600-699
+            case 600:
+                name = "Bottled Demon Tears";
+                value = 30;
+                description = "One of the rarer potions, allows the user to see hidden demons";
+                icon = "Potion/Bottled_Demon_Tear_Icon";
+                mesh = "Potion/Bottled_Demon_Tear_Mesh";
+                type = ItemType.Potion;
+                amount = 1;
+                break;
+            case 601:
+                name = "Liquid Courage";
+                value = 10;
+                description = "A magical potion that helps users overcome their fears";
+                icon = "Potion/Liquid_Courage_Icon";
+                mesh = "Potion/Liquid_Courage_Mesh";
+                type = ItemType.Potion;
+                amount = 1;
+                break;
+            case 602:
+                name = "Witch Blood";
+                value = 25;
+                description = "If you manage to bottle the blood before it evaporates, it serves as a useful aid in taming animals";
+                icon = "Potion/Witch_Blood_Icon";
+                mesh = "Potion/Witch_Blood_Mesh";
+                type = ItemType.Potion;
+                amount = 1;
+                break;
+            #endregion
+            #region Scrolls 700-799
+            case 700:
+                name = "Demon's Vow";
+                value = 50;
+                description = "The power of the Demon race can be harnessed through this scroll";
+                icon = "Scrolls/Demons_Vow_Icon";
+                mesh = "Scrolls/Demons_Vow_Mesh";
+                type = ItemType.Scroll;
+                amount = 1;
+                break;
+            case 701:
+                name = "Ogre's Confession";
+                value = 50;
+                description = "The power of the Ogre king can be harnessed through this scroll";
+                icon = "Scrolls/Ogres_Confession_Icon";
+                mesh = "Scrolls/Ogres_Confession_Mesh";
+                type = ItemType.Scroll;
+                amount = 1;
+                break;
+            case 702:
+                name = "Witch's Promise";
+                value = 50;
+                description = "The power of the Witch Tribe can be harnessed through this scroll";
+                icon = "Scrolls/Witchs_Promise_Icon";
+                mesh = "Scrolls/Witchs_Promise_Mesh";
+                type = ItemType.Scroll;
+                amount = 1;
+                break;
                 #endregion
         }
         Item temp = new Item
@@ -193,7 +271,7 @@ public static class ItemData
             Heal = heal,
             Type = type,
             Mesh = Resources.Load("Prefabs/" + mesh) as GameObject,
-            Icon = Resources.Load("Icon/" + icon) as Sprite
+            Icon = Resources.Load("Icon/" + icon) as Texture
         };
         return temp;
     }

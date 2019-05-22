@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     [Header("Character Speeds")]
     public float jumpSpeed = 8f;
     public float speed = 5f, gravity = 20f;
+    public static bool canMove;
     //Mouse Look//
     [Header("Rotational Axis")]
     public RotationalAxis axis = RotationalAxis.MouseX;
@@ -26,6 +27,10 @@ public class PlayerManager : MonoBehaviour
     [Header("Player and Camera connection")]
     public GameObject player;
     public GameObject mainCamera;
+    //EXP//
+    [Header("XP Reference")]
+    public static float maxXp;
+    public static float curXP, delayXp;
     #region PlayerStats
     //Stats//
     [Header("Player Stats")]
@@ -56,6 +61,8 @@ public class PlayerManager : MonoBehaviour
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
         //Stats//
         HeartHealth.maxHealth = maxHP;
+        //Saving//
+
     }
     #endregion
 
@@ -117,6 +124,24 @@ public class PlayerManager : MonoBehaviour
         expBar.value = Mathf.Clamp01(curExp / maxExp);
     }
     #endregion
+
+    public void Save()
+    {
+        savePos = this.transform.position;
+        SaveToBinary.SaveData(this);
+    }
+
+    public void Load()
+    {
+        DataToSave data = SaveToBinary.LoadData(this);
+        level = data.level;
+        maxHP = data.maxHP;
+        curHP = data.curHP;
+        maxXp = data.maxExp;
+        curXP = data.curExp;
+        savePos = new Vector3(data.x, data.y, data.y);
+        this.transform.position = savePos;
+    }
 }
 
 public enum RotationalAxis

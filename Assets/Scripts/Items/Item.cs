@@ -15,7 +15,7 @@ public class Item
     //Description of what the Object is
     private string _description;
     //Icon that displays when that Object is in an Inventory
-    private Sprite _icon;
+    private Texture _icon;
     //Mesh of that object when it is equipt or in the world
     private GameObject _mesh;
     //Enum ItemType which is the Type of object so we can classify them
@@ -62,7 +62,7 @@ public class Item
         set { _description = value; }
     }
     //public Icon 
-    public Sprite Icon
+    public Texture Icon
     {
         //get the private Icon
         get { return _icon; }

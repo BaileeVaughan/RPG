@@ -54,7 +54,6 @@ public class HeartHealth : MonoBehaviour
             }
             i++;
         }
-
     }
     #endregion
     #region UpdateHearts
