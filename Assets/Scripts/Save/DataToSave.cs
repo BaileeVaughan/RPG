@@ -10,12 +10,12 @@ public class DataToSave
     {
         playerName = player.playerName;
         level = player.level;
-        maxHP = HeartHealth.maxHealth;
-        curHP = HeartHealth.curHealth;
+        //maxHP = PlayerManager.maxHP;
+        //curHP = PlayerManager.curHP;
         maxExp = PlayerManager.maxXp;
         curExp = PlayerManager.curXP;
-        x = player.savePos.x;
-        y = player.savePos.y;
-        z = player.savePos.z;
+        x = player.transform.position.x;
+        y = player.transform.position.y;
+        z = player.transform.position.z;
     }
 }

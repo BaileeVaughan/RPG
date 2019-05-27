@@ -12,7 +12,6 @@ public static class ItemData
         ItemType type = ItemType.Food;
         int heal = 0;
         int damage = 0;
-        int protection = 0;
         int armour = 0;
         int amount = 0;
 
@@ -78,7 +77,7 @@ public static class ItemData
                 icon = "Weapons/Satans_Shield_Icon";
                 mesh = "Weapon/Satans_Shield_Mesh";
                 type = ItemType.Weapon;
-                protection = 80;
+                armour = 80;
                 amount = 1;
                 break;
             #endregion
@@ -90,7 +89,7 @@ public static class ItemData
                 icon = "Apparel/Bowel_Belt_Icon";
                 mesh = "Apparel/Bowel_Belt_Mesh";
                 type = ItemType.Apparel;
-                protection = 5;
+                armour = 5;
                 amount = 1;
                 break;
             case 201:
@@ -100,7 +99,7 @@ public static class ItemData
                 icon = "Apparel/Deathly_Eye_Icon";
                 mesh = "Apparel/Deathly_Eye_Mesh";
                 type = ItemType.Apparel;
-                protection = 10;
+                armour = 10;
                 amount = 1;
                 break;
             case 202:
@@ -135,7 +134,7 @@ public static class ItemData
             case 302:
                 name = "Witch Bone";
                 value = 5;
-                description = "An item you hold dear to you, as it reminds you of your family";
+                description = "Dried and prone to breakage from the slightest touch";
                 icon = "Crafting/Witch_Bone_Icon";
                 mesh = "Crafting/Witch_Bone_Mesh";
                 type = ItemType.Crafting;
@@ -155,7 +154,7 @@ public static class ItemData
             case 401:
                 name = "Tainted Holy Stone";
                 value = 0;
-                description = "Soaked in the blood of the most heinous demons, yet it was still not enough to completely stain the stone";
+                description = "Soaked in the blood of the most heinous demons, yet it was still not enough to completely stain this stone";
                 icon = "Quest/Tainted_Holy_Stone_Icon";
                 mesh = "Quest/Tainted_Holy_Stone_Mesh";
                 type = ItemType.Quest;
@@ -185,7 +184,7 @@ public static class ItemData
                 value = 15;
                 description = "Said to be the only thing capable of crossing from Hell to Earth";
                 icon = "Ingredients/Leaking_Hell_Icon";
-                mesh = "Ingredients/Leaking_Hell_Stone_Mesh";
+                mesh = "Ingredients/Leaking_Hell_Mesh";
                 type = ItemType.Ingredients;
                 amount = 1;
                 break;
@@ -265,7 +264,6 @@ public static class ItemData
             ID = itemID,
             Value = value,
             Damage = damage,
-            Protection = protection,
             Armour = armour,
             Amount = amount,
             Heal = heal,

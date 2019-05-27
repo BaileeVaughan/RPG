@@ -38,8 +38,7 @@ public class PlayerManager : MonoBehaviour
     public int[] statData;
     public string playerName;
     public int level;
-    public int maxHP, curHP; 
-    public float maxExp, curExp;
+    public float maxHP, curHP;
     [Header("Game Reference")]
     public Slider expBar;
     public Vector3 savePos;
@@ -59,10 +58,6 @@ public class PlayerManager : MonoBehaviour
         //Interact//
         player = GameObject.FindGameObjectWithTag("Player");
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-        //Stats//
-        HeartHealth.maxHealth = maxHP;
-        //Saving//
-
     }
     #endregion
 
@@ -116,18 +111,23 @@ public class PlayerManager : MonoBehaviour
                 if (hitInfo.collider.CompareTag("Item"))
                 {
                     Debug.Log("Item");
+                    ItemHandler handler = hitInfo.transform.GetComponent<ItemHandler>();
+                    if (handler != null)
+                    {
+                        handler.OnCollection();
+                    }
                 }
                 #endregion
             }
         }
         //Stats//
-        expBar.value = Mathf.Clamp01(curExp / maxExp);
+        expBar.value = Mathf.Clamp01(curXP / maxXp);
     }
     #endregion
 
     public void Save()
     {
-        savePos = this.transform.position;
+        savePos = transform.position;
         SaveToBinary.SaveData(this);
     }
 
@@ -140,7 +140,7 @@ public class PlayerManager : MonoBehaviour
         maxXp = data.maxExp;
         curXP = data.curExp;
         savePos = new Vector3(data.x, data.y, data.y);
-        this.transform.position = savePos;
+        transform.position = savePos;
     }
 }
 
